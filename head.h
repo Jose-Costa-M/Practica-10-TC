@@ -61,3 +61,6 @@ void menu_rangoLetras ();
 void imprimir_alfabeto (alfabeto a);
 void eleccion_menu(int *opcion);
 void eleccion_menu_individual(int *opcion);
+void  eleccion_rangoNumeros(int *inicio, int *fin);
+void eleccion_rangoLetras_mayusculas(char *inicio, char *fin);
+void eleccion_rangoLetras_minusculas(char *inicio, char *fin);
