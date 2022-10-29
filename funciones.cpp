@@ -35,10 +35,10 @@ void eleccion_rangoNumeros (int *inicio, int *fin) {
 void eleccion_rangoLetras_mayusculas (char *inicio, char *fin) {
     do {
         cout << "(SOLO ENTRE A-Z)" << endl;
-        cout << "Digita el inicio del rango" << endl;
+        cout << "\nDigita el inicio del rango: " << endl;
         cin >> *inicio;
         *inicio = toupper(*inicio);
-        cout << "Digita el fin del rango" << endl;
+        cout << "\nDigita el fin del rango: " << endl;
         cin >> *fin;
         *fin = toupper(*fin);
     } while (*inicio < 'A' || *fin > 'Z' || *inicio > *fin);
@@ -47,10 +47,10 @@ void eleccion_rangoLetras_mayusculas (char *inicio, char *fin) {
 void eleccion_rangoLetras_minusculas (char *inicio, char *fin) {
     do {
         cout << "(SOLO ENTRE a-z)" << endl;
-        cout << "Digita el inicio del rango" << endl;
+        cout << "\nDigita el inicio del rango: " << endl;
         cin >> *inicio;
         *inicio = tolower(*inicio);
-        cout << "Digita el fin del rango" << endl;
+        cout << "\nDigita el fin del rango: " << endl;
         cin >> *fin;
         *fin = tolower(*fin);
     } while (*inicio < 'a' || *fin > 'z' || *inicio > *fin);
@@ -59,28 +59,31 @@ void eleccion_rangoLetras_minusculas (char *inicio, char *fin) {
 
 void menu () {
     cout << "\n|---------------------------------------|";
-    cout << "\n|       ° INTRODUCE TU ALFABETO °       |";
+    cout << "\n|       - INTRODUCE TU ALFABETO -       |";
     cout << "\n|--------------------|------------------|";
     cout << "\n| 1. INDIVIDUAL      | 2. RANGO         |";
     cout << "\n|--------------------|------------------|";
+    cout << "\n";
     puts ("\nSelecciona una opcion:");
 }
 
 void menu_rango () {
     cout << "\n|---------------------------------------|";
-    cout << "\n|           ° ELIGE LA OPCION °         |";
+    cout << "\n|           - ELIGE LA OPCION -         |";
     cout << "\n|--------------------|------------------|";
     cout << "\n| 1. NUMEROS         | 2. LETRAS        |";
     cout << "\n|--------------------|------------------|";
+    cout << "\n";
     puts ("\nSelecciona una opcion:");
 }
 
 void menu_rangoLetras () {
     cout << "\n|---------------------------------------|";
-    cout << "\n|           ° ELIGE LA OPCION °         |";
+    cout << "\n|           - ELIGE LA OPCION -         |";
     cout << "\n|--------------------|------------------|";
     cout << "\n| 1. MAYUSCULAS      | 2. MINUSCULAS    |";
     cout << "\n|--------------------|------------------|";
+    cout << "\n";
     puts ("\nSelecciona una opcion:");
 }
 
@@ -109,15 +112,18 @@ void leer_validar_cadena (string *s1, set<string> a, int tam) {
     int tam2 = tam;
     do{
         if(i==0){
-        cout << "Digita la cadena a evaluar" << endl;
+        cout << "Digita la cadena a evaluar:" << endl;
         cin >> *s1;
         }else{
             cout << "Digita una cadena valida" << endl;
             cin >> *s1;
         }
+
+        if (*s1 == "_lam") {
+            *s1 = '\0';
+            break;
+        }
+
         i++;
     } while (!verificar_cadena(*s1, a, tam2));
-
 }
-
-
