@@ -90,17 +90,27 @@ int main() {
 
       }else{
         cout<<"OPCION IVALIDA"<<endl;
-      }
+     }
 
 //PROBLEMA 2: LEER DOS CADENAS Y VERIFICAR SI ES VALIDA O NO
-   string s1, s2;
-   cout<<"Ingrese dos cadenas pertenecientas al alfabeto designado: "<<endl;
-   leer_validar_cadena(&s1, a, tam_string);
-   leer_validar_cadena(&s2, a, tam_string);
-   
+    string s1, s2;
+    cout << "Ingrese dos cadenas pertenecientas al alfabeto designado: " << endl;
+    cout << "(Si desea ingresar una cadena vacia, ingrese el comando _lam) " << endl;
+    leer_validar_cadena(&s1, a, tam_string);
+    leer_validar_cadena(&s2, a, tam_string);
+    cout << "Las cadenas ingresadas son: " << endl;
+    cout << "W1: " << s1 << endl;
+    cout << "W2: " << s2 << endl;
+    cout << endl;
+
 //PROBLEMA 3: VERIFICAR SI S1 ES SUBCADENA, SUBSECUENCIA, PREFIJO O SUBFIJO DE S2
-    
-        if(subcadena(s1, s2)){
+    if (s1 == s2 || s1 == '\0') {
+        cout << "W1 es prefijo impropio de W2." << endl;
+        cout << "W1 es sufijo impropio de W2." << endl;
+        cout << "W1 es subcadena impropio de W2." << endl;
+        cout << "W1 es subsecuencia de W2." << endl;
+    }
+/*      if(subcadena(s1, s2)){
             cout<<"La cadena "<<s1<<" es subcadena de "<<s2<<endl;
         }else{
             cout<<"La cadena "<<s1<<" no es subcadena de "<<s2<<endl;
@@ -117,12 +127,12 @@ int main() {
             cout<<"La cadena "<<s1<<" no es prefijo de "<<s2<<endl;
         }
 
-        if(subfijo(s1, s2)){
+        if(sufijo(s1, s2)){
             cout<<"La cadena "<<s1<<" es subfijo de "<<s2<<endl;
         }else{
             cout<<"La cadena "<<s1<<" no es subfijo de "<<s2<<endl;
         }
-
+*/
 
 
 
