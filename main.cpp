@@ -8,7 +8,7 @@
 #include "head.h"
 
 int main() {
-     int opcion, tam_string, cantidad_alfabeto, i = 1, j = 0;
+     int opcion, tam_string = 1, cantidad_alfabeto, i = 1, j = 0;
      alfabeto a;
      vt<char> alfabeto_1 = {'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'};
 
@@ -92,6 +92,36 @@ int main() {
         cout<<"OPCION IVALIDA"<<endl;
       }
 
+//PROBLEMA 2: LEER DOS CADENAS Y VERIFICAR SI ES VALIDA O NO
+   string s1, s2;
+   cout<<"Ingrese dos cadenas pertenecientas al alfabeto designado: "<<endl;
+   leer_validar_cadena(&s1, a, tam_string);
+   leer_validar_cadena(&s2, a, tam_string);
+   
+//PROBLEMA 3: VERIFICAR SI S1 ES SUBCADENA, SUBSECUENCIA, PREFIJO O SUBFIJO DE S2
+    
+        if(subcadena(s1, s2)){
+            cout<<"La cadena "<<s1<<" es subcadena de "<<s2<<endl;
+        }else{
+            cout<<"La cadena "<<s1<<" no es subcadena de "<<s2<<endl;
+        }
+  
+        if(subsecuencia(s1, s2)){
+            cout<<"La cadena "<<s1<<" es subsecuencia de "<<s2<<endl;
+        }else{
+            cout<<"La cadena "<<s1<<" no es subsecuencia de "<<s2<<endl;
+        }
+        if(prefijo(s1, s2)){
+            cout<<"La cadena "<<s1<<" es prefijo de "<<s2<<endl;
+        }else{
+            cout<<"La cadena "<<s1<<" no es prefijo de "<<s2<<endl;
+        }
+
+        if(subfijo(s1, s2)){
+            cout<<"La cadena "<<s1<<" es subfijo de "<<s2<<endl;
+        }else{
+            cout<<"La cadena "<<s1<<" no es subfijo de "<<s2<<endl;
+        }
 
 
 
