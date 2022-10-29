@@ -1,0 +1,49 @@
+EJEMPLOS DE VALIDACIONES
+
+(a-z): Cualquier palabra es formada por el alfabeto a-z
+(0-9): Cualquier numero es formado por el alfabeto 0-9
+(a1, 34, 56, ms, Yr): a156ms34, Yrmsa1; NO VALIDAS: a341, Ymrs
+
+Sii w1 = w2 ó si w1=' ' --> W1 es un prefijo, sufijo y subcadena impropia de w2, así como una subsecuencia de este
+ 
+Todo prefijo/sufijo es una subcadena, PERO NO TODA SUBCADENA PUEDE SER UN PREFIJO/SUFIJO
+Toda subcadena es una subsecuencia, PERO NO TODA SUBSECUENCIA ES UNA SUBCADENA
+
+SET de subcadenas
+p pa paj paja pajar o ro aro jaro ajaro aja jar
+
+paja, pajaro:
+Prefijo: Propio
+Sufijo: NO
+Subcadena: SÍ
+Subsecuencia: SÍ
+
+aro, pajaro:
+Prefijo: NO
+Sufijo: Propio
+Subcadena: SÍ
+Subsecuencia: SÍ
+
+paro, pajaro:
+Prefijo: NO
+Sufijo: NO
+Subcadena: NO
+Subsecuencia: SÍ
+
+aja, pajaro:
+Prefijo: NO
+Sufijo: NO
+Subcadena: Propia
+Subsecuencia: SÍ
+
+pajaro, pajaro:
+Prefijo: Impropio
+Sufijo: Impropio
+Subcadena: impropia
+Subsecuencia: SÍ
+
+' ', pajaro:
+Prefijo: Impropio
+Sufijo: Impropio
+Subcadena: impropia
+Subsecuencia: SÍ

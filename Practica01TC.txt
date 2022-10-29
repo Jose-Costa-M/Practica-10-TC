@@ -1,0 +1,38 @@
+
+I. Introducir alfabeto:
+	1. Introducirlo
+		a) Cantidad de símbolos (mínimo 3)
+		b) Longitud de cada símbolo
+		for (i = 0; i < Cantidad de símbolos; i++) >> Recibir símbolos y solicitar nuevamente símbolos inválidos (cantidad incorrecta)
+		Remover caracteres repetidos
+	2. Rango
+		a) Letras (a - z)
+			(if alfabeto == letras) >> Elegir mayúsculas o minúsculas
+		b) Números (0 - 9)
+
+II. Leer dos cadenas:
+	for (i = 0; i < 1; i++)
+		1. Leer Cadena0X
+		2. Validar cadena0X
+			(If Cadena0X != Válida) >> Volver a (1)
+
+III. Indicar propiedades de Cadena0X:
+	for (i = 0; i < 1; i++)
+		1. Evaluar e indicar si Cadena0X:
+			a) Prefijo (propio o no propio)
+			b) Sufijo (propio o no propio)
+			c) Subcadena
+			d) Subsecuencia
+
+IV. Generar lenguajes L1, L2:
+	for (i = 0; i < 1; i++)
+		1. Solicitar número de palabras para LX
+		2. Solicitar longitud de (todas) las palabras de LX
+		3. Imprimir las palabras generadas aleatoriamente de LX
+
+V. Generar LD:
+	1. Hacer la operación L1 - L2 y, con ello, generar y almacenar LD
+	2. Imprimir LD
+
+VI. Potencia del alfabeto:
+	1. Solicitar
