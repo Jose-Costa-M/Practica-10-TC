@@ -15,6 +15,7 @@ int main() {
     //  Se imprime el menu
     eleccion_menu(&opcion);
  
+ // PROBLEMA 1: LEER EL ALFABETO DE 2 FORMAS, INVIDIDUAL Y RANGO
       if(opcion == 1){
       //INDIVIDUAL
       eleccion_menu_individual(&cantidad_alfabeto);
@@ -49,19 +50,13 @@ int main() {
        if(opcion == 1){
             //RANGO NUMEROS
             int inicio, fin;
-            do{
-              cout<<"(SOLO ENTRE 0-9)"<<endl;
-              cout<<"Digita el inicio del rango"<<endl;
-              cin>>inicio;
-              cout<<"Digita el fin del rango"<<endl;
-              cin>>fin;
-            } while (inicio < 0 || fin > 9 || inicio > fin);
-            
+            eleccion_rangoNumeros(&inicio, &fin);
             for(int i = inicio; i <= fin; i++) {
                 string aux = to_string(i);
                 a.ins(aux);
             }
-           
+           imprimir_alfabeto(a);
+
             }else if(opcion == 2){
                 //RANGO LETRAS
                 menu_rangoLetras();
@@ -70,39 +65,25 @@ int main() {
                 if(opcion == 1){
                     //RANGO LETRAS MAYUSCULAS
                 char inicio, fin;
-                do{
-                cout<<"(SOLO ENTRE A-Z)"<<endl;
-                cout<<"Digita el inicio del rango"<<endl;
-                cin>>inicio;
-                inicio = toupper(inicio);
-                cout<<"Digita el fin del rango"<<endl;
-                cin>>fin;
-                fin = toupper(fin);
-                } while (inicio < 'A' || fin > 'Z' || inicio > fin);
-                
+                eleccion_rangoLetras_mayusculas(&inicio, &fin);
                 for(char i = inicio; i <= fin; i++) {
                     string aux = "";
                     aux += i;
                     a.ins(aux);
                 }
+                imprimir_alfabeto(a);
+
                 }else if(opcion == 2){
                     //RANGO LETRAS MINUSCULAS
                     char inicio, fin;
-                    do{
-                    cout<<"(SOLO ENTRE a-z)"<<endl;
-                    cout<<"Digita el inicio del rango"<<endl;
-                    cin>>inicio;
-                    inicio = tolower(inicio);
-                    cout<<"Digita el fin del rango"<<endl;
-                    cin>>fin;
-                    fin = tolower(fin);
-                    } while (inicio < 'a' || fin > 'z' || inicio > fin);
+                    eleccion_rangoLetras_minusculas(&inicio, &fin);
                     for(char i = inicio; i <= fin; i++) {
                     string aux = "";
                     aux += i;
                     a.ins(aux);
                 }
                  imprimir_alfabeto(a);
+
                 }
             }
        
@@ -111,7 +92,7 @@ int main() {
         cout<<"OPCION IVALIDA"<<endl;
       }
 
-   
+
 
 
 
