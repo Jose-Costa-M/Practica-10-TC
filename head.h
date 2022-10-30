@@ -11,6 +11,7 @@ using namespace std;
  
 #define _io ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);
 #define endl "\n"
+#define lambda "\0"
 #define vt vector
 #define fi first
 #define se second
@@ -46,6 +47,9 @@ typedef pair<int, int> pii;
 typedef pair<lli, lli> pll;
 typedef pair<ld, ld> pdd;
 typedef set<string> alfabeto;
+typedef set<string> prefijo;
+typedef set<string> sufijo;
+typedef set<string> lenguaje;
 typedef vt<int> vi;
 typedef vt<vi> vvi;
 typedef vt<pii> vpi;
@@ -65,4 +69,10 @@ void  eleccion_rangoNumeros (int *inicio, int *fin);
 void eleccion_rangoLetras_mayusculas (char *inicio, char *fin);
 void eleccion_rangoLetras_minusculas (char *inicio, char *fin);
 bool verificar_cadena (string s1, set<string> a,int tam2);
-void leer_validar_cadena (string *s1, set<string> a, int tam);
+void leer_validar_cadena (string *s1, alfabeto a, int tam);
+bool isSubsecuence(string s1, string s2);
+void comparation(string s1,string s2,prefijo s2_prefijo,sufijo s2_sufijo);
+//bool prefijo (string s1, string s2);
+//bool sufijo (string s1, string s2);
+//bool subcadena (string s1, string s2);
+//bool subsecuencia (string s1, string s2);
