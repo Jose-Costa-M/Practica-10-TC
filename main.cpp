@@ -190,8 +190,19 @@ int main() {
     imprimir_alfabeto(L1);
     cout<<endl;
 
+//PROBLEMA 6: OBTENER LA POTENCIA DEL ALFABETO INGRESADO
 
-   
+solve_problemset6(alfabeto, cantidad_alfabeto);
+
+//PROBLEMA 7:
+//limpiamos memoria
+a.clear();   
+s2_prefijo.clear();
+s2_sufijo.clear();
+L1.clear();
+L2.clear();
+alfabeto.clear();
+
 
 
         return 0;
