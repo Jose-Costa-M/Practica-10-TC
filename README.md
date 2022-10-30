@@ -3,7 +3,8 @@ CONTRIBUIDORES
 
 Charlie Parra
 
-![image](https://user-images.githubusercontent.com/88689761/198859841-1dbdd4e0-c779-454d-9ba9-5f5c133677c2.png)
+![image](https://user-images.githubusercontent.com/88689761/198859871-db09dbba-9fd5-4ef2-98e4-36d8a52bd480.png)
+
 
 
 
