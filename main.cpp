@@ -38,9 +38,11 @@ int main() {
         }
         
       }
-
+     system("cls");
+     cout<<"El alfabeto es: "<<endl;
      imprimir_alfabeto(a);
-
+     cout<<endl;
+     getchar();
 
 
       }else if(opcion == 2){
@@ -94,8 +96,7 @@ int main() {
 
 //PROBLEMA 2: LEER DOS CADENAS Y VERIFICAR SI ES VALIDA O NO
     string s1, s2;
-    cout << "Ingrese dos cadenas pertenecientas al alfabeto designado: " << endl;
-    cout << "(Si desea ingresar una cadena vacia, ingrese el comando _lam) " << endl;
+    cout << "Ingrese dos cadenas pertenecientas al alfabeto designado (Si desea ingresar una cadena vacia, ingrese el comando _lam) : " << endl<<endl;
     leer_validar_cadena(&s1, a, tam_string);
     leer_validar_cadena(&s2, a, tam_string);
     cout <<endl<<"Las cadenas ingresadas son: " << endl;
@@ -134,7 +135,7 @@ int main() {
     //SUFIJOS pajaro: ajaro jaro aro ro o 
     cout<<endl;
     comparation(s1, s2, s2_prefijo, s2_sufijo);    
-
+    cout<<endl;
 //PROBLEMA 4: GENERAR LENGUAJES ALETAORIOS MEDIANTE EL ALFABETO INGRESADO
     int cantidad_cadenas;
     cout<<"Ingrese el longitud del lenguaje que desea generar: "<<endl;
@@ -194,7 +195,13 @@ int main() {
 
 solve_problemset6(alfabeto, cantidad_alfabeto);
 
-//PROBLEMA 7:
+/*PROBLEMA 7: Todas las cadenas de letras en minúsculas (a-z) que contengan las cinco vocales en orden. 
+Las vocales pueden estar repetidas (siempre que mantengan el orden), las secuencias de las vocales también pueden repetirse. 
+La secuencia completa de vocales también puede repetirse.
+Ejemplos de palabras aceptadas: rtaeioujutf, arteheejyibgfohgfdujhfd, aaaejhjhihgghgough, hknalleioomuwraamqekiodsu, aheklinmounmajkertebhiohjju, etc.
+- Ejemplos de palabras no aceptadas: kayteemnoyug, ejuyaklengtivdfsojhgu, agheehklinmoythuvbazeyiawqeihjou
+*/
+
 //limpiamos memoria
 a.clear();   
 s2_prefijo.clear();
@@ -202,8 +209,12 @@ s2_sufijo.clear();
 L1.clear();
 L2.clear();
 alfabeto.clear();
+system("pause");
+system("cls");
 
 
+cout<<"Todas  las  cadenas  de  dígitos  que  tengan  por  lo  menos  un  dígito repetido."<<endl<<"Los dígitos no tienen que estar en orden."<<endl<<"La cadena debe tener una longitud mínima de 5 caracteres"<<endl;
 
-        return 0;
+solve_problemset7();
+    return 0;
 }
