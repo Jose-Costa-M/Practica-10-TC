@@ -13,6 +13,7 @@ using namespace std;
 #define endl "\n"
 #define lambda "\0"
 #define vt vector
+#define str string 
 #define fi first
 #define se second
 #define pb push_back
@@ -75,6 +76,9 @@ void comparation(string s1,string s2,prefijo s2_prefijo,sufijo s2_sufijo);
 void potencia(vt<string> alfabeto, int cantidad_alfabeto);
 string reverse(string const &s);
 void solve_problemset6(vt<string> alfabeto, int cantidad_alfabeto);
+void solve_problemset7();
+bool validarCadena(string s);
+
 //bool prefijo (string s1, string s2);
 //bool sufijo (string s1, string s2);
 //bool subcadena (string s1, string s2);
