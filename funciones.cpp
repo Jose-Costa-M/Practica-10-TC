@@ -4,7 +4,6 @@
  *  Fecha: 19 de octubre del 2022 
  *  Problema: PRACTICA 1 TEORIA COMPUTACIONAL
 */
-
 #include "head.h"
 
 void eleccion_menu (int *opcion) {
@@ -120,10 +119,121 @@ void leer_validar_cadena (string *s1, set<string> a, int tam) {
         }
 
         if (*s1 == "_lam") {
-            *s1 = '\0';
+            *s1 = lambda;
             break;
         }
 
         i++;
     } while (!verificar_cadena(*s1, a, tam2));
 }
+
+bool isSubsecuence (string s1, string s2) {
+    int m = s1.length();
+    int n = s2.length();
+    int j = 0;
+    for (int i = 0; i < n && j < m; i++)
+        if (s1[j] == s2[i])
+            j++;
+    return (j==m);
+    
+}
+
+void comparation(string s1,string s2,prefijo s2_prefijo,sufijo s2_sufijo){
+  
+  if (s1.compare(s2) == 0|| s1.compare(lambda) == 0) {
+        cout << "W1:  "<<s1<<" es prefijo impropio de W2: "<<s2<<"."<< endl;
+        cout << "W1: "<<s1<<" es sufijo impropio de W2: "<<s2<<"."<< endl;
+        cout << "W1: "<<s1<<" es subcadena impropia de W2: "<<s2<<"." << endl;
+        cout << "W1: "<<s1<<" es subsecuencia de W2: "<<s2<<"." << endl;
+    }else if(s2_prefijo.count(s1)){
+        cout << "W1: "<<s1<<" es prefijo propio de W2: "<<s2<<"." << endl;
+        cout << "W1: "<<s1<<" no es sufijo de W2: "<<s2<<"." << endl;
+        cout << "W1: "<<s1<<" es subcadena propia de W2: "<<s2<<"." << endl;
+        cout << "W1: "<<s1<<" es subsecuencia de W2: "<<s2<<"." << endl;
+    }else if(s2_sufijo.count(s1)){
+        cout << "W1: "<<s1<<" no es prefijo de W2: "<<s2<<"." << endl;
+        cout << "W1: "<<s1<<" es sufijo propio de W2: "<<s2<<"." << endl;
+        cout << "W1: "<<s1<<" es subcadena propia de W2: "<<s2<<"." << endl;
+        cout << "W1: "<<s1<<" es subsecuencia de W2: "<<s2<<"." << endl;
+    }else if(s2.find(s1) != string::npos){
+        cout << "W1: "<<s1<<" no es prefijo de W2: "<<s2<<"." << endl;
+        cout << "W1: "<<s1<<" no es sufijo de W2: "<<s2<<"." << endl;
+        cout << "W1: "<<s1<<" es subcadena propia de W2: "<<s2<<"." << endl;
+        cout << "W1: "<<s1<<" es subsecuencia de W2: "<<s2<<"." << endl;
+    }else if(isSubsecuence(s1,s2)){
+        cout << "W1: "<<s1<<" no es prefijo de W2: "<<s2<<"." << endl;
+        cout << "W1: "<<s1<<" no es sufijo de W2: "<<s2<<"." << endl;
+        cout << "W1: "<<s1<<" no es subcadena de W2: "<<s2<<"." << endl;
+        cout << "W1: "<<s1<<" es subsecuencia de W2: "<<s2<<"." << endl;
+    }else{
+         cout << "W1: "<<s1<<" no es prefijo de W2: "<<s2<<"." << endl;
+        cout << "W1: "<<s1<<" no es sufijo de W2: "<<s2<<"." << endl;
+        cout << "W1: "<<s1<<" no es subcadena de W2: "<<s2<<"." << endl;
+        cout << "W1: "<<s1<<" no es subsecuencia de W2: "<<s2<<"." << endl;
+    }
+
+}
+
+
+
+
+/*
+prueba de escritorio
+ paro   pajaro
+m = 4
+n = 6
+j = 0 
+i = 0
+s1[0] = p
+s2[0] = p
+j = 1
+
+i = 1
+s1[1] = a
+s2[1] = a
+j = 2
+
+i = 2
+s1[2] = r
+s2[2] = j
+j = 2
+
+i = 3
+s1[3] = o
+s2[3] = a
+j = 2
+
+i = 4
+s1[4] = r
+s2[4] = r
+j = 3
+
+i = 5
+s1[5] = o
+s2[5] = o
+j = 4
+
+j = 4
+m = 4
+j == m
+*/
+
+
+
+
+
+
+/*
+    int aux = 0;
+
+    for (int i = 0; s1[i] != '\0'; i++) {
+        if (s1[i] == s2[aux])
+            aux++;
+
+        if (aux == s2.size()) {
+            return true;
+        }
+
+    return false;
+}
+*/
