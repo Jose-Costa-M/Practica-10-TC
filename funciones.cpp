@@ -166,7 +166,7 @@ void comparation(string s1,string s2,prefijo s2_prefijo,sufijo s2_sufijo){
         cout << "W1: "<<s1<<" no es subcadena de W2: "<<s2<<"." << endl;
         cout << "W1: "<<s1<<" es subsecuencia de W2: "<<s2<<"." << endl;
     }else{
-         cout << "W1: "<<s1<<" no es prefijo de W2: "<<s2<<"." << endl;
+        cout << "W1: "<<s1<<" no es prefijo de W2: "<<s2<<"." << endl;
         cout << "W1: "<<s1<<" no es sufijo de W2: "<<s2<<"." << endl;
         cout << "W1: "<<s1<<" no es subcadena de W2: "<<s2<<"." << endl;
         cout << "W1: "<<s1<<" no es subsecuencia de W2: "<<s2<<"." << endl;
@@ -185,11 +185,61 @@ string reverse(string const &s)
 void potencia(vt<string> alfabeto, int cantidad_alfabeto){
 // a1, a2, a3     a1a1 a1a2 a1a3 a2a1 a2a2 a2a3 a3a1 a3a2 a3a3
    vt<string> potencia;
+
+   cout<<"alfabeto sin potencia"<<endl;
     for(int i=0;i<alfabeto.size();i++){
-         for(int j=0;j<alfabeto.size();j++){
-              potencia.push_back(alfabeto[i]+alfabeto[j]);
-         }
+         cout<<alfabeto[i]<<" ";
     }
+    cout<<endl;
+   cantidad_alfabeto = abs(cantidad_alfabeto);
+
+    if(cantidad_alfabeto == 1){
+        for(int i = 0; i < alfabeto.size(); i++){
+            potencia.push_back(alfabeto[i]);
+        }
+    }else if(cantidad_alfabeto == 2){
+        for(int i = 0; i < cantidad_alfabeto; i++){
+            for(int j = 0; j < alfabeto.size(); j++){
+                potencia.push_back(alfabeto[i]+alfabeto[j]);
+            }
+            //a1 a2 a3 a4  
+        }
+    }else if(cantidad_alfabeto == 3){
+
+        for(int i = 0; i < cantidad_alfabeto; i++){
+            for(int j = 0; j < alfabeto.size(); j++){
+                for(int k = 0; k < alfabeto.size(); k++){
+                    potencia.push_back(alfabeto[i]+alfabeto[j]+alfabeto[k]);
+                }
+            }
+        }
+        //a1 a2 a3 a4  
+    
+    }else if(cantidad_alfabeto == 4){
+        for(int i = 0; i < cantidad_alfabeto; i++){
+            for(int j = 0; j < alfabeto.size(); j++){
+                for(int k = 0; k < alfabeto.size(); k++){
+                    for(int l = 0; l < alfabeto.size(); l++){
+                        potencia.push_back(alfabeto[i]+alfabeto[j]+alfabeto[k]+alfabeto[l]);
+                    }
+                }
+            }
+        }
+    }else if(cantidad_alfabeto == 5){
+        for(int i = 0; i < cantidad_alfabeto; i++){
+            for(int j = 0; j < alfabeto.size(); j++){
+                for(int k = 0; k <alfabeto.size(); k++){
+                    for(int l = 0; l < alfabeto.size(); l++){
+                        for(int m = 0; m < alfabeto.size(); m++){
+                            potencia.push_back(alfabeto[i]+alfabeto[j]+alfabeto[k]+alfabeto[l]+alfabeto[m]);
+                        }
+                    }
+                }
+            }
+        }
+    }  
+
+    
     cout << "Potencia del alfabeto: " << endl;
     for(int i=0;i<potencia.size();i++){
         cout << potencia[i] << " ";
@@ -221,6 +271,31 @@ do {
     }
 }
 
+bool validarCadena(string s){
+
+ const regex expReg ("\\d+(\\d)\\d+\\1");
+ return regex_match(s, expReg);
+}
+
+/* 
+
+(1|1-9)*
+
+*/
+
+void solve_problemset7(){
+  str s1;
+    cout<<"Ingrese la cadena a validar con expresion regular"<<endl;
+    cin>>s1;
+
+  if(validarCadena(s1)){
+    cout<<"La cadena "<<s1<<" es valida"<<endl;
+
+  }else{
+    cout<<"La cadena "<<s1<<" no es valida"<<endl;
+  }
+
+}
 
 
 /*
