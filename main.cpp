@@ -98,44 +98,101 @@ int main() {
     cout << "(Si desea ingresar una cadena vacia, ingrese el comando _lam) " << endl;
     leer_validar_cadena(&s1, a, tam_string);
     leer_validar_cadena(&s2, a, tam_string);
-    cout << "Las cadenas ingresadas son: " << endl;
+    cout <<endl<<"Las cadenas ingresadas son: " << endl;
     cout << "W1: " << s1 << endl;
     cout << "W2: " << s2 << endl;
     cout << endl;
 
 //PROBLEMA 3: VERIFICAR SI S1 ES SUBCADENA, SUBSECUENCIA, PREFIJO O SUBFIJO DE S2
-    if (s1 == s2 || s1 == '\0') {
-        cout << "W1 es prefijo impropio de W2." << endl;
-        cout << "W1 es sufijo impropio de W2." << endl;
-        cout << "W1 es subcadena impropio de W2." << endl;
-        cout << "W1 es subsecuencia de W2." << endl;
+   prefijo s2_prefijo;
+   sufijo  s2_sufijo;
+
+   //almacenamos los prefijos de s2
+    for(int i = 0; i < s2.size()-1; i++){
+         string aux = "";
+         for(int j = 0; j <= i; j++){
+              aux += s2[j];
+         }
+         s2_prefijo.ins(aux);
     }
-/*      if(subcadena(s1, s2)){
-            cout<<"La cadena "<<s1<<" es subcadena de "<<s2<<endl;
-        }else{
-            cout<<"La cadena "<<s1<<" no es subcadena de "<<s2<<endl;
-        }
-  
-        if(subsecuencia(s1, s2)){
-            cout<<"La cadena "<<s1<<" es subsecuencia de "<<s2<<endl;
-        }else{
-            cout<<"La cadena "<<s1<<" no es subsecuencia de "<<s2<<endl;
-        }
-        if(prefijo(s1, s2)){
-            cout<<"La cadena "<<s1<<" es prefijo de "<<s2<<endl;
-        }else{
-            cout<<"La cadena "<<s1<<" no es prefijo de "<<s2<<endl;
-        }
+   cout<<"Los prefijos de la cadena s2 son: "<<endl;
+   imprimir_alfabeto(s2_prefijo);
+    //almacenamos los sufijos de s2
+    for(int i = 0; i < s2.size(); i++){
+         string aux = "";
+         for(int j = i; j < s2.size(); j++){
+              aux += s2[j];
+         }
+         s2_sufijo.ins(aux);
+    }
+    s2_sufijo.erase(s2);
 
-        if(sufijo(s1, s2)){
-            cout<<"La cadena "<<s1<<" es subfijo de "<<s2<<endl;
-        }else{
-            cout<<"La cadena "<<s1<<" no es subfijo de "<<s2<<endl;
+    cout<<"Los sufijos de la cadena s2 son: "<<endl;
+    imprimir_alfabeto(s2_sufijo);
+
+    //PREFIJOS pajaro: pajar, paja, paj, pa, p
+    //SUFIJOS pajaro: ajaro jaro aro ro o 
+    cout<<endl;
+    comparation(s1, s2, s2_prefijo, s2_sufijo);    
+
+//PROBLEMA 4: GENERAR LENGUAJES ALETAORIOS MEDIANTE EL ALFABETO INGRESADO
+    int cantidad_cadenas;
+    cout<<"Ingrese el longitud del lenguaje que desea generar: "<<endl;
+    cin>>tam_string; //maginutud del lenguaje
+
+    cout<<"Ingrese la cantidad de elementos que desea generar para cada elemento de su lenguaje: "<<endl;
+    cin>>cantidad_alfabeto; // cantidad de elementos que tendra cada elemento del lenguaje
+    cout<<endl;
+    
+   lenguaje L1,L2;
+
+ //pasar nuestro alfabeto a un vector
+    vt<string> alfabeto;
+    for(auto it = a.begin(); it != a.end(); it++){
+        alfabeto.push_back(*it);
+    }
+
+    //generar lenguaje1 aleatorio
+    for(int i = 0; i < tam_string; i++){
+        string aux = "";
+        for(int j = 0; j < cantidad_alfabeto; j++){
+            int random = rand() % alfabeto.size();
+            aux += alfabeto[random];
         }
-*/
+        L1.ins(aux);
+    }
+
+    //generar lenguaje2 aleatorio
+    for(int i = 0; i < tam_string; i++){
+        string aux = "";
+        for(int j = 0; j < cantidad_alfabeto; j++){
+            int random = rand() % alfabeto.size();
+            aux += alfabeto[random];
+        }
+        L2.ins(aux);
+    }
+
+    cout<<"L1: "<<endl;
+    imprimir_alfabeto(L1);
+    cout<<endl;
+    cout<<"L2: "<<endl;
+    imprimir_alfabeto(L2);
+    cout<<endl;
+
+//PROBLEMA 5: REALIZAR LA RESTA DE LENGUAJES L1 - L2
+   for(string s : L2){
+       if(L1.count(s)){
+           L1.erase(s);
+       }
+    }
+
+    cout<<"L1 - L2: "<<endl;
+    imprimir_alfabeto(L1);
+    cout<<endl;
 
 
+   
 
- 
+
         return 0;
 }
