@@ -174,6 +174,52 @@ void comparation(string s1,string s2,prefijo s2_prefijo,sufijo s2_sufijo){
 
 }
 
+// 1a, 2a, 3a     1a1a 1a2a 1a3a 2a1a 2a2a 2a3a 3a1a 3a2a 3a3a
+string reverse(string const &s)
+{
+    string rev(s.rbegin(), s.rend());
+    return rev;
+}
+
+
+void potencia(vt<string> alfabeto, int cantidad_alfabeto){
+// a1, a2, a3     a1a1 a1a2 a1a3 a2a1 a2a2 a2a3 a3a1 a3a2 a3a3
+   vt<string> potencia;
+    for(int i=0;i<alfabeto.size();i++){
+         for(int j=0;j<alfabeto.size();j++){
+              potencia.push_back(alfabeto[i]+alfabeto[j]);
+         }
+    }
+    cout << "Potencia del alfabeto: " << endl;
+    for(int i=0;i<potencia.size();i++){
+        cout << potencia[i] << " ";
+    }
+    cout << endl;
+
+}
+
+
+void solve_problemset6(vt<string> alfabeto, int cantidad_alfabeto){
+
+do {
+  cout << "Ingrese la potencia a la cual desea elevar el alfabeto (mayor a -5 y menor a 5):" << endl;
+  cin >> cantidad_alfabeto;
+}while (cantidad_alfabeto < -5 || cantidad_alfabeto > 5);
+
+
+  if(cantidad_alfabeto == 0){
+        cout<<"El alfabeto elevado a la potencia 0 es: lamda"<<endl;
+  }else if(cantidad_alfabeto > 0){
+        cout<<"El alfabeto elevado a la potencia "<<cantidad_alfabeto<<" es: "<<endl;
+        potencia(alfabeto, cantidad_alfabeto);
+    }else{
+        cout<<"El alfabeto elevado a la potencia "<<cantidad_alfabeto<<" es: "<<endl;
+        for(int i= 0; i<alfabeto.size();i++){
+            alfabeto[i]= reverse(alfabeto[i]);
+        }
+        potencia(alfabeto, cantidad_alfabeto);
+    }
+}
 
 
 
